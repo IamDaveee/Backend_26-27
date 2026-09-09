@@ -1,0 +1,115 @@
+/* Alap stílusok */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f2f4f8;
+    margin: 0;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  /* Cím */
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+  
+  /* Input mezők */
+  input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+  }
+  
+  /* Gomb */
+  button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #0077cc;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #005fa3;
+  }
+  
+  /* Feladatlista */
+  ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+  }
+  
+  li {
+    background-color: #eef;
+    margin-bottom: 8px;
+    padding: 10px 14px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  li.keszVan {
+    background-color: #d0ffd0;
+    text-decoration: line-through;
+    color: #555;
+  }
+  
+  /* Feladat szöveg */
+  li span {
+    flex-grow: 1;
+    cursor: pointer;
+  }
+  
+  /* Törlés gomb */
+  li button {
+    background-color: transparent;
+    color: #cc0000;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Statisztika */
+  #stat {
+    margin-top: 20px;
+    font-size: 15px;
+    color: #444;
+    text-align: center;
+  }
+  
+  /* Reszponzív */
+  @media (max-width: 600px) {
+    .container {
+      padding: 20px;
+    }
+  
+    button {
+      font-size: 14px;
+    }
+  
+    input[type="text"] {
+      font-size: 14px;
+    }
+  }
+  
