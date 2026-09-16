@@ -1,0 +1,177 @@
+/* Alapbeállítások */
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f2f4f8;
+    margin: 0;
+    padding: 40px;
+
+    display: flex;
+    justify-content: center;
+}
+
+
+/* Fő konténer */
+
+.container {
+    background-color: white;
+
+    width: 100%;
+    max-width: 600px;
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+
+/* Cím */
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+
+/* Szövegmező */
+
+input[type="text"] {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 12px;
+    margin: 10px 0;
+
+    font-size: 16px;
+
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+
+/* Rádiógombos részek */
+
+.mufaj,
+.latta {
+    margin: 20px 0;
+    padding: 15px;
+
+    background-color: #f5f5f5;
+
+    border-radius: 8px;
+}
+
+.mufaj label,
+.latta label {
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+
+/* Hozzáadás gomb */
+
+button {
+    width: 100%;
+
+    padding: 12px;
+
+    font-size: 16px;
+
+    border: none;
+    border-radius: 6px;
+
+    cursor: pointer;
+}
+
+
+/* Szűrő */
+
+select {
+    width: 100%;
+
+    padding: 12px;
+    margin: 10px 0;
+
+    font-size: 16px;
+
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+
+/* Film lista */
+
+ul {
+    list-style: none;
+
+    padding: 0;
+    margin-top: 20px;
+}
+
+li {
+    background-color: #eef;
+
+    margin-bottom: 8px;
+    padding: 14px;
+
+    border-radius: 6px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* Látott film */
+
+li.latott {
+    /* ide kerülhet a látott film speciális megjelenése */
+}
+
+
+/* Film adatai */
+
+li .filmAdatok {
+    flex-grow: 1;
+}
+
+
+/* Törlés gomb */
+
+li button {
+    width: auto;
+
+    background-color: transparent;
+
+    font-size: 18px;
+}
+
+
+/* Statisztika */
+
+#stat {
+    margin-top: 20px;
+
+    text-align: center;
+
+    font-size: 15px;
+}
+
+
+/* Reszponzív megjelenés */
+
+@media (max-width: 600px) {
+
+    .container {
+        padding: 20px;
+    }
+
+    .mufaj label,
+    .latta label {
+        display: block;
+        margin: 8px 0;
+    }
+
+}

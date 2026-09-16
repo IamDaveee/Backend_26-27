@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Filmgyűjtemény</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🎬 Filmgyűjtemény</h1>
+
+        <!-- Film címe -->
+        <input
+            type="text"
+            id="filmCim"
+            placeholder="Film címe..."
+        >
+
+        <!-- Műfaj -->
+        <div class="mufaj">
+            <h3>Műfaj:</h3>
+
+            <label>
+                <input type="radio" name="mufaj" value="Akció">
+                Akció
+            </label>
+
+            <label>
+                <input type="radio" name="mufaj" value="Vígjáték">
+                Vígjáték
+            </label>
+
+            <label>
+                <input type="radio" name="mufaj" value="Horror">
+                Horror
+            </label>
+
+            <label>
+                <input type="radio" name="mufaj" value="Sci-fi">
+                Sci-fi
+            </label>
+        </div>
+
+        <!-- Megnézte-e -->
+        <div class="latta">
+            <h3>Láttad már?</h3>
+
+            <label>
+                <input type="radio" name="latta" value="true">
+                Igen
+            </label>
+
+            <label>
+                <input type="radio" name="latta" value="false">
+                Nem
+            </label>
+        </div>
+
+        <button id="hozzaAdBtn">
+            Film hozzáadása
+        </button>
+
+        <!-- Keresés -->
+        <input
+            type="text"
+            id="kereses"
+            placeholder="Keresés cím alapján..."
+        >
+
+        <!-- Műfaj szerinti szűrés -->
+        <select id="szuro">
+            <option value="osszes">Összes műfaj</option>
+            <option value="Akció">Akció</option>
+            <option value="Vígjáték">Vígjáték</option>
+            <option value="Horror">Horror</option>
+            <option value="Sci-fi">Sci-fi</option>
+        </select>
+
+        <!-- Filmek -->
+        <ul id="filmLista"></ul>
+
+        <!-- Statisztika -->
+        <div id="stat">
+
+            <p>
+                Összes film:
+                <span id="osszes">0</span>
+            </p>
+
+            <p>
+                Látott film:
+                <span id="latott">0</span>
+            </p>
+
+            <p>
+                Még nem látott:
+                <span id="nemLatott">0</span>
+            </p>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
