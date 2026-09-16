@@ -1,0 +1,45 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
+
+.tarolo {
+  max-width: 600px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.kerdes {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin: 5px 0;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+label:hover {
+  background-color: #e0e0e0;
+}
+
+.helyes {
+  background-color: #c8f7c5;
+}
+
+.hibas {
+  background-color: #f7c5c5;
+}
+
+#idozito {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
