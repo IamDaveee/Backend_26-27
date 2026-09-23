@@ -68,7 +68,10 @@ const kerdesek = [
 
 const kvizUrlap = document.getElementById("kvizUrlap")
 const eredmeny=document.getElementById("eredmeny")
+const idozito=document.getElementById("idozito")
 
+let ido=30
+let interval
 
 function Keveres(tomb){
   const eredmeny=[...tomb]
@@ -85,10 +88,10 @@ function Keveres(tomb){
 //console.log(Keveres([1,2,3,4,5,6]));
 
 //keverés 4 kérdést kiválaszt
-let kivalasztottKerdesek=Keveres(kerdesek).slice(0,4)
+let kivalasztottKerdesek
 function KvizInditasa(){
   kvizUrlap.innerHTML="" //korábbi kérdések törlése az oladlról
-
+  kivalasztottKerdesek = Keveres(kerdesek).slice(0,4)
   kivalasztottKerdesek.forEach((k, index) => {
     let div=document.createElement("div")
     div.classList.add("kerdes")
@@ -110,24 +113,47 @@ function KvizInditasa(){
     })
 
     kvizUrlap.appendChild(div)
+
   });
-  
+
+  idozito.innerHTML=`Idő: ${ido} mp`
+  interval=setInterval(frissitIdo,1000)
 }
+
+function frissitIdo(){
+  ido--
+  idozito.innerHTML=`Idő: ${ido} mp`
+  if (ido<=0) {
+    clearInterval(interval)
+    valaszokEllenorzese()
+  }
+}
+
 let pontszam=0
+
 function valaszokEllenorzese(){
+  clearInterval(interval)
+
+  document.getElementById("eredmenyGomb").disabled=true
+  document.getElementById("ujrainditasGomb").style.display="inline-block"
+
   kivalasztottKerdesek.forEach((k, kindex)=>{
     const kivalasztottGomb=document.querySelector(`input[name="kerdes${kindex}"]:checked`)
+    pontszam+=kivalasztottGomb && kivalasztottGomb.value == k.helyesValasz? 1:0
     const inputok=document.querySelectorAll(`input[name="kerdes${kindex}"]`)
-    inputok.forEach((i)=>{
-      
-      if (i.value==k.helyesValasz) {
-        i.parentElement.classList.add("helyes")
+    inputok.forEach((input)=>{
+      if (input.value==k.helyesValasz) {
+        input.parentElement.classList.add("helyes")
       }
-      else if(i.checked){
-        i.parentElement.classList.add("hibas")
+      else if(input.checked){
+        input.parentElement.classList.add("hibas")
       }
     })
   })
+
+  eredmeny.innerHTML=`
+    Eredmény: ${pontszam} / 4
+  `
 }
 
 KvizInditasa()
@@ -135,7 +161,12 @@ KvizInditasa()
 document.getElementById("eredmenyGomb").addEventListener("click", ()=>{
   valaszokEllenorzese()
 })
-
-  
-  
-  
+document.getElementById("ujrainditasGomb").addEventListener("click" ,()=>{
+  clearInterval(interval)
+  ido=30
+  KvizInditasa()
+  document.getElementById("eredmenyGomb").disabled=false
+  document.getElementById("ujrainditasGomb").style.display="none"
+  eredmeny.innerHTML=""
+  pontszam=0
+})
