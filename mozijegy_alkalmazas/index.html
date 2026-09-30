@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mozijegy-foglalás</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="kontener">
+        <h1>Mozijegy-foglalás</h1>
+
+        <section class="doboz">
+            <h2>1. Válassz kategóriát!</h2>
+            <div id="kategoriak" class="kategoriak">
+                <label><input type="radio" name="kategoria" value="Összes film" checked> Összes film</label>
+                <label><input type="radio" name="kategoria" value="Vígjáték"> Vígjáték</label>
+                <label><input type="radio" name="kategoria" value="Akció"> Akció</label>
+                <label><input type="radio" name="kategoria" value="Sci-fi"> Sci-fi</label>
+                <label><input type="radio" name="kategoria" value="Animáció"> Animáció</label>
+            </div>
+        </section>
+
+        <section>
+            <h2>2. Válassz filmet!</h2>
+            <div id="filmekLista" class="filmek"></div>
+        </section>
+
+        <section class="doboz foglalas-doboz">
+            <h2>3. Foglalás adatai</h2>
+            <p id="kivalasztottFilmSzoveg"><strong>Kiválasztott film:</strong> nincs kiválasztva</p>
+
+            <label for="idopont">Vetítési időpont:</label>
+            <select id="idopont">
+                <option value="">Válassz időpontot!</option>
+                <option value="14:00">14:00</option>
+                <option value="16:30">16:30</option>
+                <option value="18:00">18:00</option>
+                <option value="20:30">20:30</option>
+            </select>
+
+            <label for="jegyekSzama">Jegyek száma:</label>
+            <input type="number" id="jegyekSzama" min="1" max="6" value="1">
+
+            <p id="ido" class="ido">A visszaszámláló a film kiválasztásakor indul.</p>
+            <p id="uzenet" class="uzenet"></p>
+
+            <div class="gombok">
+                <button id="foglalasGomb" type="button">Foglalás</button>
+                <button id="ujFoglalasGomb" type="button" class="rejtett">Új foglalás</button>
+            </div>
+        </section>
+
+        <section id="eredmeny" class="doboz eredmeny rejtett"></section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
