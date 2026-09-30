@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moziest foglalás</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="tarolo">
+        <h1>🎬 Moziest foglalás</h1>
+
+        <div id="idozito" class="idozito">
+            Foglalási idő: 60 mp
+        </div>
+
+        <form id="foglalasForm">
+
+            <label for="nev">Név:</label>
+            <input type="text" id="nev" name="nev" placeholder="Add meg a neved">
+
+            <label for="film">Film:</label>
+            <select id="film" name="film">
+                <option value="">-- Válassz filmet --</option>
+                <option value="Interstellar">Interstellar</option>
+                <option value="Inception">Inception</option>
+                <option value="The Dark Knight">The Dark Knight</option>
+                <option value="Spider-Man: Into the Spider-Verse">Spider-Man: Into the Spider-Verse</option>
+            </select>
+
+            <label for="jegyek">Jegyek száma:</label>
+            <input type="number" id="jegyek" name="jegyek" min="1" max="10" value="1">
+
+            <p>Ülőhely típusa:</p>
+
+            <div class="radio-group">
+                <label>
+                    <input type="radio" name="hely" value="Normal">
+                    Normál
+                </label>
+
+                <label>
+                    <input type="radio" name="hely" value="VIP">
+                    VIP
+                </label>
+
+                <label>
+                    <input type="radio" name="hely" value="Premium">
+                    Premium
+                </label>
+            </div>
+
+            <button type="submit" id="foglalasGomb">Foglalás</button>
+        </form>
+
+        <div id="uzenet"></div>
+
+        <h2>Foglalások</h2>
+
+        <table id="foglalasok">
+            <thead>
+                <tr>
+                    <th>Név</th>
+                    <th>Film</th>
+                    <th>Jegyek</th>
+                    <th>Helytípus</th>
+                    <th>Ár</th>
+                    <th>Törlés</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                
+            </tbody>
+        </table>
+
+        <div class="statisztika">
+            <p>Foglalások száma: <span id="foglalasokSzama">0</span></p>
+            <p>Eladott jegyek: <span id="jegyekSzama">0</span></p>
+        </div>
+
+        <button id="ujrainditasGomb">Új foglalási időszak</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
