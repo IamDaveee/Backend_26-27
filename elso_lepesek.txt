@@ -1,0 +1,9 @@
+1. lépés: npm init -y (package.json fájlt létrehozza)
+2. lépés: npm install express nodemon (node_modules, package-lock.json)
+3. lépés: package.json kiegészítése:
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+4. lépés: index.js létrehozása
